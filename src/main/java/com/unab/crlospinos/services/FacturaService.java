@@ -90,7 +90,7 @@ public class FacturaService implements IFacturaService {
             throw new RuntimeException("No se puede realizar esta accion");
         }
 
-        facturaEntity.setValorPagar(facturaActualizarDto.getValorPagar());
+        facturaEntity.setEstado(true);
 
         FacturaEntity facturaEntityActualizado=iFacturaRepository.save(facturaEntity);
 
@@ -105,7 +105,7 @@ public class FacturaService implements IFacturaService {
         FacturaEntity facturaEntity=iFacturaRepository.findByIdFactura(id);
 
         if(facturaEntity.getUsuarioEntity().getId() != idUsuario){
-            throw new RuntimeException("No se puede eliminar el partido");
+            throw new RuntimeException("No se puede eliminar la factura");
         }
 
         iFacturaRepository.delete(facturaEntity);

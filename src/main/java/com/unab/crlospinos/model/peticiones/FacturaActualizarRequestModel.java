@@ -7,6 +7,6 @@ import lombok.Setter;
 @Getter
 public class FacturaActualizarRequestModel {
 
-    private float valorPagar;
+    private boolean estado;
     
 }

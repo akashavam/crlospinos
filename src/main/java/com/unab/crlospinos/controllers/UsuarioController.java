@@ -1,7 +1,6 @@
 package com.unab.crlospinos.controllers;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import org.modelmapper.ModelMapper;
@@ -70,9 +69,9 @@ public class UsuarioController {
 
         for(FacturaDto facturaDto:facturaDtoList){
             FacturaDataRestModel facturaDataRestModel=modelMapper.map(facturaDto, FacturaDataRestModel.class);
-            if(facturaDataRestModel.getFechaFactura().compareTo(new Date(System.currentTimeMillis())) < 0){
+            /*if(facturaDataRestModel.getFechaFactura().compareTo(new Date(System.currentTimeMillis())) < 0){
                 facturaDataRestModel.setEstado(true);
-            }
+            }*/
             facturaDataRestModelList.add(facturaDataRestModel);
     }
 
